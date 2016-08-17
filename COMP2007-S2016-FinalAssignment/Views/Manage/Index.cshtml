@@ -1,0 +1,31 @@
+﻿@model COMP2007_S2016_FinalAssignment.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage";
+}
+
+<h2>@ViewBag.Title.</h2>
+@*index.cshtml
+    Amanda Field - 200267851, Anthony Gobin - 200296437, Robert Page
+    OnTheRoX
+    The Manage page of the OnTheRox Website. Gives the user the option to change thier password*@
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <h4>Change your account settings</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Password:</dt>
+        <dd>
+            [
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("Change your password", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Create", "SetPassword")
+            }
+            ]
+        </dd>
+    </dl>
+</div>

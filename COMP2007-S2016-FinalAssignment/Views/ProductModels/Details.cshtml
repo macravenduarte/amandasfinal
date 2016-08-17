@@ -1,0 +1,80 @@
+﻿@model COMP2007_S2016_FinalAssignment.Models.ProductModels
+
+@{
+    ViewBag.Title = "Details";
+}
+@*Details.cshtml
+    Amanda Field - 200267851, Anthony Gobin - 200296437, Robert Page
+    OnTheRoX
+    Detailed view of selected product*@
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BottleSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BottleSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LongDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LongDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThumbnailURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThumbnailURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullsizeURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullsizeURL)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Add to cart", "AddToCart",
+        "ShoppingCart", new { id = Model.ID }, "")|
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

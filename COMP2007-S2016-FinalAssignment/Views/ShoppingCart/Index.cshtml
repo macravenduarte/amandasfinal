@@ -1,0 +1,64 @@
+﻿@model COMP2007_S2016_FinalAssignment.ViewModels.ShoppingCartViewModel
+@{
+    ViewBag.Title = "Shopping Cart";
+}
+@*Index.cshtml
+    Amanda Field - 200267851, Anthony Gobin - 200296437, Robert Page
+    OnTheRoX
+    Display contents of shopping cart*@
+<h3>
+    <em>Review</em> your cart:
+</h3>
+<p class="button">
+    @Html.ActionLink("Checkout >> ", "AddressAndPayment", "Checkout")
+</p>
+<div id="update-message">
+</div>
+<table>
+    <tr>
+        <th>
+            Product Name
+        </th>
+        <th>
+            Price (each)
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in
+                Model.CartItems)
+    {
+        <tr id="row-@item.RecordId">
+            <td>
+                @Html.ActionLink(item.ProductModels.ProductName, "Details", "ProductModels",  new { id = item.ID }, null)
+            </td>
+            <td>
+                @item.ProductModels.ProductPrice
+            </td>
+            <td id="item-count-@item.RecordId">
+                @item.Count
+            </td>
+            <td>
+                <a href="#" class="RemoveLink"
+                   data-id="@item.RecordId">
+                    Remove
+                    from cart
+                </a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td>
+            Total
+        </td>
+        <td></td>
+        <td></td>
+        <td id="cart-total">
+            @Model.CartTotal
+        </td>
+    </tr>
+</table>
+
+

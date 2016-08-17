@@ -1,0 +1,31 @@
+﻿@model COMP2007_S2016_FinalAssignment.Models.Order
+@*AddressAndPayment.cshtml
+    Amanda Field - 200267851, Anthony Gobin - 200296437, Robert Page
+    OnTheRoX
+    view to add order information *@
+@using (Html.BeginForm())
+
+{
+
+    <h2>Address And Payment</h2>
+    <fieldset>
+        <legend>Shipping Information</legend>
+        @Html.EditorForModel()
+    </fieldset>
+    <fieldset>
+        <legend>Payment</legend>
+        <p>
+            We're running a promotion: all music is free
+            with the promo code: "FREE"
+        </p>
+        <div class="editor-label">
+            @Html.Label("Promo Code")
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("PromoCode")
+        </div>
+    </fieldset>
+
+    <input type="submit" value="Submit Order" />
+}
+
